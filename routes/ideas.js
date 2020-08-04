@@ -13,10 +13,11 @@ router.get('/',(req, res)=>{
 router.post('/add', (req, res)=>{
     console.log("body", req.body)
     const text = req.body.text;
+    const title = req.body.title;
     const time = Date.parse(req.body.time);
 
     const newIdea = new Idea({
-        text,time
+        title,text,time
     });
 
     newIdea.save().then(()=>{res.status(200).json('idea added')})

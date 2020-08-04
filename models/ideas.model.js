@@ -9,6 +9,10 @@ const ideaSchema = new Schema({
         required: true,
         trim: true
     },
+    title:{
+        type: String,
+        trim: true
+    },
     time:{
         type: Date,
         required: true
