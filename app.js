@@ -20,7 +20,7 @@ app.get('/', (req, res)=>{
     res.send("Welcome to idea box api")
 })
 
-mongoose.connect('mongodb+srv://blue:bluebloodedAlien@testcluster.0g86m.mongodb.net/ideaBox?retryWrites=true&w=majority',{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
+mongoose.connect(mongoURI,{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
 
 const connection = mongoose.connection;
 connection.once('open', ()=>{
