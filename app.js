@@ -20,7 +20,11 @@ app.get('/', (req, res)=>{
     res.send("Welcome to idea box api")
 })
 
-mongoose.connect(mongoURI,{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
+mongoose.connect(mongoURI,{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}, (error)=>{
+    if(error){
+        console.error("Error: ",error)
+    }
+})
 
 const connection = mongoose.connection;
 connection.once('open', ()=>{
